@@ -15,6 +15,21 @@
   * Sample Java: http://activemq.apache.org/hello-world.html
   * Sample Java example with download:http://activemq.apache.org/web-samples.html
   * http://activemq.apache.org/web-samples.html
+
+---------------
+Creating Sender	
+---------------
+	1) ActiveMQConnectionFactory connectionFactory = new ActiveMQConnectionFactory(Config.QUEUE_URL);
+	2) Connection connection = connectionFactory.createConnection();
+	3) Session session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE);
+	4) 	Destination destination = session.createQueue("QUEUE_NAME");
+	    OR
+		  Destination destination = session.createTopic("QUEUE_TOPIC");
+	5) MessageProducer producer = session.createProducer(destination);
+	6) TextMessage message = session.createTextMessage(text);
+	7) producer.send(message);
+	8) session.close();
+	9) connection.close(); 
   
 --------------------
 Spring JMS Template  
