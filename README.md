@@ -26,3 +26,7 @@ Spring JMS Template
     - spring.activemq.broker-url=tcp://DESKTOP-21J3C8J:61616
     - spring.activemq.user=admin
     - spring.activemq.password=admin
+    - 
+*  CustomReceiver.java make reciever thead 
+  - Message message=(Message) jmsTemplate.receive("mailbox-destination");
+*  Receiver.java using @JmsListener ,but in this case only one thread is placing data to all lisner annotated with @JmsListene
