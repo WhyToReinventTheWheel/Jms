@@ -20,4 +20,4 @@
 Spring JMS Template  
 ------------------
 * https://spring.io/guides/gs/messaging-jms/
-
+* https://github.com/spring-guides/gs-messaging-jms
