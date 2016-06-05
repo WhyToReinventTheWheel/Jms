@@ -18,14 +18,25 @@ public class Receiver {
     @Autowired
     ConfigurableApplicationContext context;
 
+    
+    
+    @JmsListener(destination = "mailbox-destination", containerFactory = "myJmsContainerFactory")
+    public void receiveMessage1(String message) throws InterruptedException {
+    	Thread.sleep(500);
+        System.out.println("$$$$$  @JmsListener Received11111 <" + message + ">" + Thread.currentThread().getName());
+        FileSystemUtils.deleteRecursively(new File("activemq-data"));
+    }
+    
+    
     /**
      * When you receive a message, print it out, then shut down the application.
      * Finally, clean up any ActiveMQ server stuff.
+     * @throws InterruptedException 
      */
     @JmsListener(destination = "mailbox-destination", containerFactory = "myJmsContainerFactory")
-    public void receiveMessage(String message) {
-        System.out.println("Received <" + message + ">" + Thread.currentThread().getName());
-        context.close();
+    public void receiveMessage2(String message) throws InterruptedException {
+    	Thread.sleep(500);
+        System.out.println("$$$$$ @JmsListener Received22222  <" + message + ">" + Thread.currentThread().getName());
         FileSystemUtils.deleteRecursively(new File("activemq-data"));
     }
-}
+ }
