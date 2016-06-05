@@ -12,5 +12,5 @@
     - ~\apache-activemq-5.13.3\activemq-all-5.13.3.jar add this in build path
     - OR
     - Maven dependency : http://activemq.apache.org/download.html
-    - <dependency><groupId>org.apache.activemq</groupId><artifactId>activemq-all</artifactId><version>5.10.0</version></dependency>
+    - '<dependency><groupId>org.apache.activemq</groupId><artifactId>activemq-all</artifactId><version>5.10.0</version></dependency>'
 
