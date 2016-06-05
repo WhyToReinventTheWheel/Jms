@@ -30,7 +30,19 @@ Creating Sender
 	7) producer.send(message);
 	8) session.close();
 	9) connection.close(); 
-  
+-----------------	
+Creating Receiver
+-----------------
+	1) ActiveMQConnectionFactory connectionFactory = new ActiveMQConnectionFactory(Config.QUEUE_URL);
+	2) Connection connection = connectionFactory.createConnection();
+	3) connection.start();
+	4) Session session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE);
+	5) Destination destination = session.createQueue(Config.QUEUE_NAME);
+	6) MessageConsumer consumer = session.createConsumer(destination);
+	7) Message message = consumer.receive(100);
+	8) consumer.close();
+	9) session.close();
+	10)connection.close();  
 --------------------
 Spring JMS Template  
 ------------------
