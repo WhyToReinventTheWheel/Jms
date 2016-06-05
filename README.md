@@ -29,4 +29,4 @@ Spring JMS Template
     - 
 *  CustomReceiver.java make reciever thead 
   - Message message=(Message) jmsTemplate.receive("mailbox-destination");
-*  Receiver.java using @JmsListener ,but in this case only one thread is placing data to all lisner annotated with @JmsListene
+*  Receiver.java using @JmsListener ,but in this case only one thread is placing data to all lisner annotated with @JmsListener
