@@ -21,3 +21,8 @@ Spring JMS Template
 ------------------
 * Spring Boot-- https://spring.io/guides/gs/messaging-jms/
 * Spring Boot-- https://github.com/spring-guides/gs-messaging-jms
+* http://docs.spring.io/spring-boot/docs/current/reference/html/boot-features-messaging.html
+  - Edit application.properties src/main/resource if follwing properties are not present then spring broker will come in effect
+    - spring.activemq.broker-url=tcp://DESKTOP-21J3C8J:61616
+    - spring.activemq.user=admin
+    - spring.activemq.password=admin
